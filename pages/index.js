@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Result from '../components/Result';
+import Result from 'components/Result';
 
 export default () => {
   return (

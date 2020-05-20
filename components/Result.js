@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useTodayGame } from '../api/GameData';
+import { useTodayGame } from 'api/GameData';
 import NoGameToday from './NoGameToday';
 import TodayGame from './TodayGame';
 
