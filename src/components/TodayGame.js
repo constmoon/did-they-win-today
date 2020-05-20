@@ -6,7 +6,7 @@ const TodayGame = props => {
   return (
     <div>
       {away.score === null ?
-        <strong>아직 경기 전입니다.</strong> :
+        <div>아직 경기 전입니다.</div> :
         <div>
           <span>{away.team}: {away.score}</span>
           <span>vs</span>
