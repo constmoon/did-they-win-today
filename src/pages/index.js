@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Result from '../components/Result';
 
-export default function Home() {
+export default () => {
   return (
     <div className="container">
       <Head>
