@@ -13,8 +13,11 @@ export default async (req, res) => {
   const thisMonthGames = doc.querySelectorAll('.tb_wrap div');
 
   const gameList = thisMonthGames.map(game => {
+    const date = game.querySelector('.td_date').text || '';
+
     if (game.querySelector('.td_none') || game.querySelector('.cancel')) {
       return ({
+        date: date,
         hasGame: false
       })
     }
@@ -25,8 +28,9 @@ export default async (req, res) => {
       const [awayScore, homeScore] = game.querySelector('.vs') ? [null, null] : game.querySelector('.td_score').text.split(':');
 
       return ({
+        date: date,
         hasGame: true,
-        isLive: true,
+        isLive: isLive,
         away: {
           team: awayTeam,
           score: awayScore
