@@ -21,10 +21,12 @@ export default async (req, res) => {
     else {
       const awayTeam = game.querySelector('.team_lft').text || '';
       const homeTeam = game.querySelector('.team_rgt').text || '';
+      const isLive = game.querySelector('.td_btn a').toString().includes('btn_wd_on');
       const [awayScore, homeScore] = game.querySelector('.vs') ? [null, null] : game.querySelector('.td_score').text.split(':');
 
       return ({
         hasGame: true,
+        isLive: true,
         away: {
           team: awayTeam,
           score: awayScore
