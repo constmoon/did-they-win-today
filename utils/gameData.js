@@ -17,7 +17,12 @@ const useTodayGame = () => {
       const gameList = await fetchGameList();
       const date = new Date;
       const index = date.getDate() - 1;
-      setTodayGame(gameList[index]);
+      if (gameList[index].away.score === null) {
+        setTodayGame(gameList[index - 1]);
+      }
+      else {
+        setTodayGame(gameList[index]);
+      }
       setHasGame(gameList[index].hasGame);
     } catch (error) {
       throw Error(error);
