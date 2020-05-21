@@ -16,9 +16,9 @@ const useTodayGame = () => {
     try {
       const gameList = await fetchGameList();
       const date = new Date;
-      const month = date.getDate();
-      setTodayGame(gameList[month]);
-      setHasGame(gameList[month].hasGame);
+      const index = date.getDate() - 1;
+      setTodayGame(gameList[index]);
+      setHasGame(gameList[index].hasGame);
     } catch (error) {
       throw Error(error);
     } finally {
