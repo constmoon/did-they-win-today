@@ -19,8 +19,11 @@ export default () => {
           word-break: keep-all;
         }
         main {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-align: center;
-          padding: 1.5rem;
+          height: 180px;
         }
       `}</style>
     </div>
