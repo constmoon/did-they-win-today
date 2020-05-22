@@ -1,8 +1,7 @@
 import React from 'react';
 
-const TodayGame = props => {
-  const { date, isLive, away, home } = props.todayGame;
-  const { winner } = props.winner
+const TodayGame = ({ todayGame, winner }) => {
+  const { date, isLive, away, home } = todayGame;
 
   return (
     <div>
