@@ -21,7 +21,6 @@ const TodayGame = ({ todayGame, winner }) => {
         .prev-game {
           font-weight: bold;
           font-size: 5rem;
-          margin: 6rem auto 3rem;
         }
         .current-game {
           margin-top: 1rem;

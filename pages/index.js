@@ -23,6 +23,8 @@ export default () => {
           align-items: center;
           justify-content: center;
           text-align: center;
+          height: 250px;
+          margin: 6rem auto 3rem;
         }
       `}</style>
     </div>
