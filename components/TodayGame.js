@@ -20,10 +20,15 @@ const TodayGame = ({ todayGame, winner }) => {
       <style jsx>{`
         .prev-game {
           font-weight: bold;
-          font-size: 3rem;
+          font-size: 5rem;
+          margin: 6rem auto 3rem;
+        }
+        .current-game {
+          margin-top: 1rem;
+          font-size: 1.3rem;
         }
         .score {
-          margin-top: 1rem;
+          margin-top: 0.5rem;
         }
       `}
       </style>
