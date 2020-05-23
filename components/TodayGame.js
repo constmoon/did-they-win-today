@@ -9,7 +9,7 @@ const TodayGame = ({ todayGame, winner }) => {
         {winner === 'KT' ? <div>YES</div> : <div>NO</div>}
       </div>
       <div className="current-game">
-        {isLive && <div>경기 중입니다.</div>}
+        {isLive ? <div>경기 중입니다.</div> : <div>경기 종료</div>}
         <div className="score">
           <div>{date}</div>
           <span>{away.team}: {away.score}</span>
