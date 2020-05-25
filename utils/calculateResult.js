@@ -11,7 +11,6 @@ const calculateResult = () => {
       if (Number(props[key].score) === maxScore) {
         setWinner(props[key].team)
       }
-
     });
   }
 
