@@ -16,6 +16,7 @@ const ScoreBoard = ({ date, away, home }) => {
     </div>
   )
 }
+
 const LiveStreaming = () => {
   return <div className={style.live}>경기 중입니다.</div>
 }
