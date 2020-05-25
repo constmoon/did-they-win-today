@@ -1,4 +1,5 @@
 const path = require('path');
+const withStylus = require('@zeit/next-stylus');
 
 let config = {
   webpack: config => {
@@ -6,5 +7,10 @@ let config = {
     return config;
   }
 }
+
+config = withStylus({
+  ...config,
+  cssModules: true
+})
 
 module.exports = config;
