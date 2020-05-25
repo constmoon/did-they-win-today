@@ -7,11 +7,15 @@ const calculateResult = () => {
     const { away, home } = props;
     const maxScore = Math.max(away.score, home.score);
 
-    Object.keys(props).find(key => {
-      if (Number(props[key].score) === maxScore) {
-        setWinner(props[key].team)
-      }
-    });
+    if (maxScore === 0) {
+      setWinner('NONE');
+    } else {
+      Object.keys(props).find(key => {
+        if (Number(props[key].score) === maxScore) {
+          setWinner(props[key].team)
+        }
+      });
+    }
   }
 
   return [getWinner, winner];
