@@ -21,15 +21,14 @@ const LiveStreaming = () => {
   return <div className={style.live}>경기 중입니다.</div>
 }
 
-const NonLiveStreaming = ({ score }) => {
-  console.log(score)
-  return score ?
+const NonLiveStreaming = ({ isEnd }) => {
+  return isEnd ?
     <div className={style.live}>경기 종료</div> :
     <div className={style.live}>아직 경기 전입니다</div>
 }
 
 const TodayGame = ({ todayGame, winner }) => {
-  const { date, isLive, away, home } = todayGame;
+  const { date, isLive, isEnd, away, home } = todayGame;
   const score = away.score;
 
   return (
@@ -44,7 +43,7 @@ const TodayGame = ({ todayGame, winner }) => {
             <ScoreBoard date={date} away={away} home={home} />
           </> :
           <>
-            <NonLiveStreaming score={score} />
+            <NonLiveStreaming isEnd={isEnd} />
             <ScoreBoard date={date} away={away} home={home} />
           </>
         }

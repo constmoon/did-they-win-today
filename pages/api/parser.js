@@ -25,12 +25,14 @@ export default async (req, res) => {
       const awayTeam = game.querySelector('.team_lft').text || '';
       const homeTeam = game.querySelector('.team_rgt').text || '';
       const isLive = game.querySelector('.td_btn a').toString().includes('btn_wd_on');
+      const isEnd = game.querySelector('.td_btn a').toString().includes('경기결과');
       const [awayScore, homeScore] = game.querySelector('.vs') ? [null, null] : game.querySelector('.td_score').text.split(':');
 
       return ({
         date: date,
         hasGame: true,
         isLive: isLive,
+        isEnd: isEnd,
         away: {
           team: awayTeam,
           score: awayScore
