@@ -24,7 +24,7 @@ const LiveStreaming = () => {
 const NonLiveStreaming = ({ isEnd }) => {
   return isEnd ?
     <div className={style.live}>경기 종료</div> :
-    <div className={style.live}>아직 경기 전입니다</div>
+    <div className={style.live}>아직 경기 전입니다.</div>
 }
 
 const TodayGame = ({ todayGame, winner }) => {
