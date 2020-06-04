@@ -29,7 +29,6 @@ const NonLiveStreaming = ({ isEnd }) => {
 
 const TodayGame = ({ todayGame, winner }) => {
   const { date, isLive, isEnd, away, home } = todayGame;
-  const score = away.score;
 
   return (
     <div>
