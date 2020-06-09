@@ -17,8 +17,7 @@ const useTodayGame = () => {
       const gameList = await fetchGameList();
       const date = new Date;
       const index = date.getDate() - 1;
-      // TODO: 아직 경기가 없고 직전일이 월요일(무게임)일 경우 오늘 예정된 게임 표시...를 좀 더 다른 방법으로
-      if (gameList[index].away.score === null && gameList[index - 1].date.includes('월')) {
+      if (gameList[index].away && gameList[index].away.score === null) {
         setTodayGame(gameList[index - 1]);
         setHasGame(gameList[index - 1].hasGame);
       }
