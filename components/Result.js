@@ -28,7 +28,7 @@ const Result = () => {
     <>
       {hasGame ?
         <TodayGame todayGame={todayGame} winner={winner} /> :
-        <NoGameToday />}
+        <NoGameToday todayGame={todayGame} />}
     </>
   )
 }
