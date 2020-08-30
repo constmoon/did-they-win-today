@@ -28,7 +28,6 @@ const TodayGame = ({ todayGame }) => {
   React.useEffect(() => {
     getWinner(todayGame);
     if (winner && winner !== 'NONE') {
-      console.log('winner: ', winner)
       setIsMyTeamWin(teamList.find(team => team.name === winner).code === team)
     }
   }, [todayGame, winner]);
