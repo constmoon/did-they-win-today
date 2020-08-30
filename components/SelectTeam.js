@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/SelectTeam.styl';
+import style from '../styles/selectTeam.styl';
 import axios from 'axios';
 import { TeamContext } from '../contexts/teamContext';
 import { TeamListContext } from '../contexts/teamListContext';
