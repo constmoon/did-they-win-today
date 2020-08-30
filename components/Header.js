@@ -22,7 +22,7 @@ const Header = () => {
         }}
       />
       <Head>
-        <title>Did they win?</title>
+        <title>Did they win today?</title>
         <link rel="shortcut icon" href="/icons/favicon.ico" />
       </Head>
     </>
