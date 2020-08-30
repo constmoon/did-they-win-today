@@ -1,35 +1,33 @@
-import React, { useEffect } from 'react';
-import { useTodayGame } from 'utils/gameData';
-import { calculateResult } from 'utils/calculateResult';
+import React from 'react';
+import useTodayGame from 'hooks/useTodayGame';
 import NoGameToday from './NoGameToday';
 import TodayGame from './TodayGame';
+import { TeamContext } from '../contexts/teamContext';
+import style from 'styles/result.styl';
 
 const Result = () => {
-  const [getTodayGame, hasGame, todayGame, isLoaded] = useTodayGame();
-  const [getWinner, winner] = calculateResult();
+  const [getSingleGame, todayGame, isLoaded, setIsLoaded] = useTodayGame();
+  const [team] = React.useContext(TeamContext);
 
-  useEffect(() => {
-    getTodayGame();
-  }, []);
-
-  useEffect(() => {
-    if (hasGame) {
-      getWinner(todayGame);
+  React.useEffect(() => {
+    if (team) {
+      getSingleGame(team);
     }
-  }, [isLoaded]);
+    return () => setIsLoaded(false);
+  }, [team]);
 
   if (!isLoaded) {
     return (
-      <div>로딩중</div>
+      <div className={style.loading}>로딩중</div>
     )
   }
 
   return (
-    <>
-      {hasGame ?
-        <TodayGame todayGame={todayGame} winner={winner} /> :
+    <div className={style.result}>
+      {todayGame.hasGame ?
+        <TodayGame todayGame={todayGame} /> :
         <NoGameToday todayGame={todayGame} />}
-    </>
+    </div>
   )
 }
 

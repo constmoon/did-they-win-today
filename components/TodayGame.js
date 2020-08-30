@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { TeamListContext } from '../contexts/teamListContext';
+import { TeamContext } from '../contexts/teamContext';
+import { calculateResult } from '../utils/calculateResult';
 
 import ScoreBoard from './ScoreBoard';
 import style from 'styles/todayGame.styl';
@@ -14,13 +17,26 @@ const NonLiveStreaming = ({ isEnd }) => {
     <div className={style.live}>아직 경기 전입니다.</div>
 }
 
-const TodayGame = ({ todayGame, winner }) => {
+const TodayGame = ({ todayGame }) => {
   const { date, isLive, isEnd, away, home } = todayGame;
+  const [getWinner, winner] = calculateResult();
+  const [team] = React.useContext(TeamContext);
+
+  const [teamList] = React.useContext(TeamListContext);
+  const [isMyTeamWin, setIsMyTeamWin] = React.useState(false);
+
+  React.useEffect(() => {
+    getWinner(todayGame);
+    if (winner && winner !== 'NONE') {
+      console.log('winner: ', winner)
+      setIsMyTeamWin(teamList.find(team => team.name === winner).code === team)
+    }
+  }, [todayGame, winner]);
 
   return (
     <div>
       <div className={style.result}>
-        {winner === 'KT' ? <div>YES</div> : <div>NO</div>}
+        {isMyTeamWin ? <strong>YES</strong> : <strong>NO</strong>}
       </div>
       <div className={style.current}>
         {isLive ?
