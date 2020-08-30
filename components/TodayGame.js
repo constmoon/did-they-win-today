@@ -1,21 +1,8 @@
 import React from 'react';
+
+
+import ScoreBoard from './ScoreBoard';
 import style from 'styles/todayGame.styl';
-
-const ScoreBoard = ({ date, away, home }) => {
-  if (!away.score && !home.score) {
-    away.score = 0;
-    home.score = 0;
-  }
-
-  return (
-    <div className={style.score}>
-      <div>{date}</div>
-      <span>{away.team}: {away.score}</span>
-      <span> vs</span>
-      <span> {home.team}: {home.score}</span>
-    </div>
-  )
-}
 
 const LiveStreaming = () => {
   return <div className={style.live}>경기 중입니다.</div>
