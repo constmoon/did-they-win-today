@@ -3,10 +3,10 @@ import { parse } from 'node-html-parser';
 
 const date = new Date();
 const MONTH = date.getMonth() + 1;
-const TEAM = `KT`;
 const BASE_URL = `https://sports.news.naver.com/kbaseball/schedule/index.nhn`;
 
 export default async (req, res) => {
+  const TEAM = req.query.team;
   const response = await fetch(`${BASE_URL}?month=${MONTH}&teamCode=${TEAM}`);
   const html = await response.text();
   const doc = parse(html);
