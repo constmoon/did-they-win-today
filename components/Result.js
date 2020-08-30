@@ -3,7 +3,8 @@ import useTodayGame from 'hooks/useTodayGame';
 import NoGameToday from './NoGameToday';
 import TodayGame from './TodayGame';
 import { TeamContext } from '../contexts/teamContext';
-import style from 'styles/result.styl';
+import SingleBox from './common/SingleBox';
+import style from '../styles/result.styl';
 
 const Result = () => {
   const [getSingleGame, todayGame, isLoaded, setIsLoaded] = useTodayGame();
@@ -18,7 +19,9 @@ const Result = () => {
 
   if (!isLoaded) {
     return (
-      <div className={style.loading}>로딩중</div>
+      <SingleBox>
+        <div>로딩중</div>
+      </SingleBox>
     )
   }
 
