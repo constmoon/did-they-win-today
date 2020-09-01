@@ -21,7 +21,8 @@ const useTodayGame = () => {
       const gameList = await fetchGameList(team);
       const date = new Date;
       const index = date.getDate() - 1;
-      if (gameList[index].hasOwnProperty('away') && gameList[index].away.score === null) {
+      // 경기가 존재하고 아직 시작 전이면 전날 경기 표시
+      if (gameList[index].hasOwnProperty('away') && gameList[index].away.score === null && index > 1) {
         const prevGame = gameList[index - 1];
         setTodayGame(prevGame);
       }
