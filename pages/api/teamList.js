@@ -13,7 +13,7 @@ export default (req, res) => {
     {
       id: 3,
       code: 'SK',
-      name: 'SK'
+      name: 'SSG'
     },
     {
       id: 4,
