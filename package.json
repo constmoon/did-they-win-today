@@ -10,7 +10,7 @@
   "dependencies": {
     "@zeit/next-stylus": "^1.0.1",
     "axios": "^0.21.1",
-    "next": "9.3.6",
+    "next": "12.1.0",
     "next-seo": "^4.7.3",
     "node-html-parser": "^1.2.16",
     "react": "16.13.1",
